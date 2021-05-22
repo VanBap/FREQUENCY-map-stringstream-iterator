@@ -1,0 +1,62 @@
+#include <iostream> 
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <sstream> // count frequency of words
+#include <map>
+using namespace std;
+
+// ============================= FREQUENCY of EVERYTHING ===================================//
+
+// ----------------------------------- STRING ---------------------------------------------//
+void frequency(string line) {
+    stringstream ss;
+    ss << line;
+    
+    map <string, int> COUNT;
+    string mid;
+
+    while (ss >> mid) {
+        COUNT[mid]++;
+    }
+    map<string, int> ::iterator A;
+    for (A = COUNT.begin(); A != COUNT.end(); A++) {
+        cout << "WORD-> " << A->first << " OCCURS-> " << A->second << " TIMES" << endl;
+        }
+}
+int main() {
+    string line ;
+    cout << " NHAP TU CAN DEM: ";
+    getline(cin, line);
+    cout << endl;
+    frequency(line);
+    return 0;
+}
+// ------------------------------------- NUBMER -------------------------------------------//
+
+/*void frequency(vector<int> arr, int n) {
+    
+    map <int, int> NUMBER;
+    for (int i = 0; i < n; i++) {
+        NUMBER [arr[i]] ++;
+    }
+    map<int, int>::iterator v; // ITERATOR KIEU MAP 
+
+    for (v = NUMBER.begin(); v != NUMBER.end(); v++) {
+        cout << "NUMBER " << v->first << " OCCURS " << v->second << " TIMES" << endl;
+    }
+    
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> arr;
+    for (int i = 0; i < n; i++) {
+        int mid;
+        cin >> mid;
+        arr.push_back(mid);
+    }
+    frequency(arr, n);
+    return 0;
+}*/
